@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn6kfl7a4snnp"]
+
+[ext_resource type="Script" uid="uid://60sf01gr1gej" path="res://Enemies/Dragonfly/dragonfly.gd" id="1_t05iq"]
+[ext_resource type="Texture2D" uid="uid://c38c2mokahq37" path="res://Assets/Sprites/dragonfly.png" id="2_t05iq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t05iq"]
+size = Vector2(200, 200)
+
+[node name="Dragonfly" type="Node2D"]
+script = ExtResource("1_t05iq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 1.66893e-06)
+texture = ExtResource("2_t05iq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_t05iq")
