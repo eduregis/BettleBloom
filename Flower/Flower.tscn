@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dod8nvee812bl"]
+
+[ext_resource type="Script" uid="uid://cvjx5irbupobp" path="res://Flower/flower.gd" id="1_amw2a"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pjyoe"]
+load_path = "res://.godot/imported/flower_male.png-1649ba64d466139aba569f490af040df.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amw2a"]
+size = Vector2(149, 150)
+
+[node name="Flower" type="Node2D"]
+script = ExtResource("1_amw2a")
+speed = 300.0
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(1.90735e-06, 1.66893e-06)
+scale = Vector2(0.146484, 0.146484)
+texture = SubResource("CompressedTexture2D_pjyoe")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_amw2a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

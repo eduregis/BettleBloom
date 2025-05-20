@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddbma73nt53vi"]
+
+[ext_resource type="Texture2D" uid="uid://bl0qkcriafiih" path="res://Assets/Sprites/empty_bar.png" id="1_b7ubu"]
+[ext_resource type="Texture2D" uid="uid://dp6ps6i3kkjr0" path="res://Assets/Sprites/fill_bar.png" id="2_ja1d4"]
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="PollenBar" type="TextureProgressBar" parent="."]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -164.0
+offset_top = -406.0
+offset_right = -74.0
+offset_bottom = -36.0
+fill_mode = 3
+nine_patch_stretch = true
+stretch_margin_left = 8
+stretch_margin_top = 8
+stretch_margin_right = 8
+stretch_margin_bottom = 8
+texture_under = ExtResource("1_b7ubu")
+texture_progress = ExtResource("2_ja1d4")
