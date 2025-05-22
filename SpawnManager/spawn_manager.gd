@@ -1,19 +1,26 @@
-# SpawnManager.gd
+# SpawnSpawner.gd
 extends Node2D
 
-@export var initial_speed: float = 300.0
-@export var max_speed: float = 500.0
-@export var acceleration: float = 5.0
+@export var base_speed: float = 200.0
+@export var speed_increase_rate: float = 2.0  # aumento por segundo
+@export var max_speed: float = 400.0 
 
-var current_speed: float
+var current_speed: float = 100.0
 
-func _ready() -> void:
-	current_speed = initial_speed
+@onready var flower_spawner = $FlowerSpawner
+@onready var enemy_spawner = $EnemySpawner
+@onready var tile_spawner = $TileSpawner
 
 func _process(delta: float) -> void:
-	if current_speed < max_speed:
-		current_speed += acceleration * delta
-	
-	for child in get_children():
-		if child.has_method("set_speed"):
-			child.set_speed(current_speed)
+	current_speed = min(current_speed + speed_increase_rate * delta, max_speed)
+	update_spawner_speeds()
+
+func update_spawner_speeds():
+	if flower_spawner:
+		flower_spawner.set_speed(current_speed)
+
+	if enemy_spawner:
+		enemy_spawner.set_speed(current_speed)
+		
+	if tile_spawner:
+		tile_spawner.set_speed(current_speed)

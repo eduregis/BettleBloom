@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://q8kcx8q2lf7o"]
+
+[ext_resource type="Texture2D" uid="uid://cm3tcqy2yk4io" path="res://Assets/Sprites/Tiles/tile_1.png" id="2_7djav"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gm6bd"]
+size = Vector2(83.6667, 1124)
+
+[node name="Tile" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(12.5, 12.5)
+texture = ExtResource("2_7djav")
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="RightWall" type="Area2D" parent="Walls"]
+position = Vector2(874.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_gm6bd")
+
+[node name="LeftWall" type="Area2D" parent="Walls"]
+position = Vector2(-874.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_gm6bd")

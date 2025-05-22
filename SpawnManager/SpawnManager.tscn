@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://baajlgf1f2ory"]
+[gd_scene load_steps=9 format=3 uid="uid://baajlgf1f2ory"]
 
 [ext_resource type="Script" uid="uid://v2sdpj5borjn" path="res://SpawnManager/spawn_manager.gd" id="1_nxeyw"]
 [ext_resource type="Script" uid="uid://6b8y2rrofwca" path="res://SpawnManager/flower_spawner.gd" id="2_c0g46"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://bs3xrwqyu6vgg" path="res://SpawnManager/enemy_spawner.gd" id="4_xkog2"]
 [ext_resource type="PackedScene" uid="uid://gf3k3tswel7x" path="res://Enemies/Fly/Fly.tscn" id="5_w4dlf"]
 [ext_resource type="PackedScene" uid="uid://cn6kfl7a4snnp" path="res://Enemies/Dragonfly/dragonfly.tscn" id="6_emgh0"]
+[ext_resource type="Script" uid="uid://ch28bd3wp1g3s" path="res://SpawnManager/tile_spawner.gd" id="7_emgh0"]
+[ext_resource type="PackedScene" uid="uid://q8kcx8q2lf7o" path="res://Tiles/Tile1.tscn" id="8_jag8i"]
 
 [node name="SpawnManager" type="Node2D"]
 script = ExtResource("1_nxeyw")
@@ -18,3 +20,7 @@ flower_scene = ExtResource("3_5fo2r")
 script = ExtResource("4_xkog2")
 fly_scene = ExtResource("5_w4dlf")
 dragonfly_scene = ExtResource("6_emgh0")
+
+[node name="TileSpawner" type="Node2D" parent="."]
+script = ExtResource("7_emgh0")
+tile_scenes = Array[PackedScene]([ExtResource("8_jag8i")])

@@ -15,7 +15,7 @@ func _ready():
 
 	var spawn_manager = spawn_manager_scene.instantiate()
 	add_child(spawn_manager)
-	spawn_manager.position = Vector2(0, -100)
+	spawn_manager.position = Vector2.ZERO
 
 func increase_pollen(amount: int):
 	pollen_bar.value = clamp(pollen_bar.value + amount, 0, pollen_bar.max_value)

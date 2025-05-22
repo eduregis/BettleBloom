@@ -10,6 +10,7 @@ size = Vector2(130, 130)
 size = Vector2(130, 130)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 3
 script = ExtResource("1_fny1y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
